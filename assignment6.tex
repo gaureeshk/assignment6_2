@@ -1,0 +1,215 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\cosec}{}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}  
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 6}
+\author{Gaureesha Kajampady - EP20BTECH11005}
+\maketitle  
+\newpage
+\bigskips
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/gaureeshk/assignment6_2/blob/main/assignment6.tex
+\end{lstlisting}
+\section{Problem}
+gov/stats/2018/STATISTICS-PAPER-2 , Q.58\\
+Let $X_{1}$ and  $X_{2}$ be i.i.d random variables with poisson. Then ($X_{1}+2X_{2}$) is not sufficient because
+\begin{enumerate}
+    \item{$\pr{X_{1}=1,X_{2}=1 |T=3}$ depends on $\lambda$}\\
+    \item{$X_{1}+2X_{2}$ is poisson}\\
+     \item{$X_{1}+2X_{2}$ is not poisson}\\
+      \item{$\pr{X_{1}=1,X_{2}=1 | T=3}$ is Poisson with parameter one}\\
+\end{enumerate}
+Where T=($X_{1}+2X_{2}$)
+\section{Solution} 
+\begin{definition}
+     Statistic : A statistic is a function T = r($X_{1},X_{2},\dots,X_{n}$) of the random sample $X_{1},X_{2},\dots,X_{n}$.
+   \end{definition}
+   \begin{definition}
+    Sufficient Statistics : A statistic t = T(X) is sufficient for $\theta$ if the conditional probability distribution of data X, given the statistic t = T(X), doesn't depend on the parameter $\theta$.
+   \end{definition}
+   \begin{lemma} \label{a}
+Suppose that $X_{1}$ and $X_{2}$ are i.i.d poisson random variables with parameter $\lambda$, $T=X_{1}+2X_{2}$ does not follow poisson distribution.
+\end{lemma}
+\begin{proof}
+Let $\Phi_{X_{1}}(\omega)$, $\Phi_{2X_{2}}(\omega)$ and  $\Phi_{T}(\omega)$be the characteristic functions of probability density function of random variables $X_{1}$, $2X_{2}$ and T respectively.\\
+ \begin{multline}
+     $\Phi_{X_{1}}(\omega)$=E(e^{i\omega X_{1}})&=\sum_{x=0}^{\infty}\pr{X_{1}=x}e^{i\omega x}\\
+                     &=\sum_{x=0}^{\infty}\frac{e^{i\omega x-\lambda}\lambda^{x}}{x!}\\
+                     &=e^{-\lambda}\sum_{x=0}^{\infty}\frac{(e^{i\omega}\lambda)^{x}}{x!}\\
+                     &=e^{\lambda(e^{i\omega}-1)}
+ \end{multline}
+ Similarly,
+ \begin{multline}
+     $\Phi_{2X_{2}}(\omega)$=E(e^{i\omega 2X_{2}})&=\sum_{x=0}^{\infty}\pr{X_{2}=\frac{x}{2}}e^{i\omega x}\\
+                     &=\sum_{x=0,2,4....}^{\infty}\frac{e^{i\omega x-\lambda}\lambda^{\frac{x}{2}}}{(\frac{x}{2})!}\\
+                     &=e^{-\lambda}\sum_{\frac{x}{2}=0,1,2..}^{\infty}\frac{(e^{2i\omega}\lambda)^{\frac{x}{2}}}{(\frac{x}{2})!}\\
+                     &=e^{\lambda(e^{2i\omega}-1)}\\
+                     \end{multline}
+                     \begin{align}
+ \Phi_{T}(\omega)&=\Phi_{X_{1}}(\omega)\times\Phi_{2X_{2}}(\omega)\\
+  &=e^{\lambda(e^{i\omega}+e^{2i\omega}-2)}\\ 
+  &\neq e^{\mu(e^{i\omega}-1)}
+  \end{align}
+  Hence the characteristic function of T ($\Phi_{T}(\omega)$) is not in the form of the characteristic function of a poisson random variable (for any value of the parameter $\mu$).\\
+  \end{proof}
+   \begin{enumerate}
+  \item We know T=3 when $(X_{1},X_{2})$ have values (1,1) and (3,0)
+   \begin{multline}
+&\pr{X_{1}=1,X_{2}=1 |T=3}\\&=\frac{\pr{X_{1}=1,X_{2}=1 \cap T=3}}{\pr{T=3}}\\
+&=\frac{\pr{X_{1}=1,X_{2}=1}}{\pr{X_{1}=1,X_{2}=1}+\pr{X_{1}=3,X_{2}=0}}\\
+&=\frac{e^{-2\lambda}\lambda^{2}}{e^{-2\lambda}\lambda^{2}+\frac{e^{-3\lambda}\lambda^{3}}{6}}\\
+&=\frac{6}{6+\lambda}\neq \frac{e^{-1}1^{\lambda}}{\lambda!}
+\end{multline}
+Hence $\pr{X_{1}=1,X_{2}=1 |T=3}$ depends on $\lambda$ but is not poisson with parameter 1.
+$\implies$option 4 is incorrect and option 1 is correct.\\
+\item Using lemma $\ref{a}$, $T=X_{1}+2X_{2}$ is not poisson.\\
+$\implies$ option 2 is incorrect, option 3 is correct\\
+Hence options 1 and 3 are correct.
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
